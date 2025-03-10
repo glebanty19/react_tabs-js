@@ -1,11 +1,8 @@
 export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
-  // Find active tab or default to first tab
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
-  // Handle tab click
   const handleTabClick = (event, tabId) => {
     event.preventDefault();
-    // Only notify parent if selecting a different tab
     if (tabId !== activeTabId) {
       onTabSelected(tabId);
     }
